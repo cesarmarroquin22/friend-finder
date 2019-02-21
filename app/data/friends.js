@@ -12,22 +12,22 @@ var friends = [
     {
         "name": "Peligro",
         "photo": "https://myanimals.com/wp-content/uploads/2018/10/Lazy-dog-sleeping.jpg",
-        "scores": [5,5,1,1,4,2,5,5,1,5]
+        "score": [5,5,1,1,4,2,5,5,1,5]
     },
     {
         "name": "Gordo",
         "photo": "https://slm-assets0.secondlife.com/assets/1253560/view_large/8a88bbb0cb59859fdfaa4c26d729b33e.jpg?1277210865",
-        "scores": [1,5,1,3,3,5,2,4,5,4]
+        "score": [1,5,1,3,3,5,2,4,5,4]
     },
     {
         "name": "Peanut",
         "photo": "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-02/vicious_dog_0.png?itok=nsghKOHs",
-        "scores": [2,2,4,2,3,3,3,3,4,2]
+        "score": [2,2,4,2,3,3,3,3,4,2]
     },
     {
         "name": "Sucia",
         "photo": "https://c1.staticflickr.com/2/1202/1246344930_8c561a98bf_b.jpg",
-        "scores": [2,2,4,2,3,3,3,3,4,2]
+        "score": [2,2,4,2,3,3,3,3,4,2]
     },
 ];
 

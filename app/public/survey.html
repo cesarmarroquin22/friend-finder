@@ -6,16 +6,14 @@
 	<title>Friend Finder Survey</title>
 
 	<!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Asap|Francois+One" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
-    
 <nav class="navbar navbar-default" role="navigation">
   <h3 class="navbar-brand pull-right text-white">Survey Questions</h3>
     <div class="navbar-header">
@@ -210,7 +208,7 @@
 
 <script type="text/javascript">
 
-$("#submit").on("click", function(){
+$("#submit").on("click", (event) => {
   event.preventDefault();
 
   if (($("#name").val().trim() !== "") && ($("#photo").val().trim() !== "")) {
@@ -236,14 +234,14 @@ $("#submit").on("click", function(){
     var currentURL = window.location.origin;
 
     // AJAX post the data to the friends API.
-    $.post(currentURL + "/api/friends", userData, function(data){
+    $.post(currentURL + "/api/friends", userData, (data) => {
 
       // Grab the result from the AJAX post so that the best match's name and photo are displayed.
       $("#matchName").text(data.name);
       $('#matchImg').attr("src", data.photo);
 
       // Show the modal with the best match
-      $("#resultsModal").modal('toggle');
+      $("#resultsModal").modal('open');
 
     });
 }
@@ -255,6 +253,10 @@ else
 return false;
 });
 
-$('#resultsModal').on('hidden.bs.modal', function () {
-window.location.reload(true);
-})
+$("#close-modal").on("click", (event) => {
+  $.get('/', (req, res) => {
+    location.replace(res);
+  })
+});
+
+</script>

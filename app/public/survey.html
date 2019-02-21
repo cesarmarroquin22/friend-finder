@@ -169,13 +169,6 @@
 
 </main>
 
-<footer class="footer">
-  <div class="container">
-	  <p><a href="/api/friends" style="text-decoration: none;">API Friends List</a> |
-				<a href="https://github.com/cesarmarroquin22/friend-finder" target="_blank"><i class="fa fa-github"></i> GitHub Repo</a></p>
-  </div>
-</footer>
-
 <!-- Modal -->
 <div id="resultsModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -187,8 +180,8 @@
 	</div>
 	<div class="modal-body">
 	<div class = "col-xs-12 col-md-6">
-		<h2 id="matchName"></h2>
-		  <img id="matchImg" src="" style="width:250px;height:275px" alt="">
+		<h2 class="text-center" id="matchName"></h2>
+		  <img id="matchImg" src="" style="width:250px;height:275px" alt="Responsive image">
 	</div>
 	</div>
 	  <div class="modal-footer">
@@ -196,7 +189,14 @@
 		</div>
 </div>
 	</div>
-		</div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+          <p><a href="/api/friends" style="text-decoration: none;">API Friends List</a> |
+              <a href="https://github.com/cesarmarroquin22/friend-finder" target="_blank"><i class="fa fa-github"></i> GitHub Repo</a></p>
+        </div>
+    </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
@@ -230,11 +230,9 @@ $("#submit").on("click", (event) => {
       ]
     };
 
-    // Grab the URL of the website
-    var currentURL = window.location.origin;
-
     // AJAX post the data to the friends API.
-    $.post(currentURL + "/api/friends", userData, (data) => {
+    $.post("/api/friends", userData, (data) => {
+      console.log('response = ' + JSON.stringify(data));
 
       // Grab the result from the AJAX post so that the best match's name and photo are displayed.
       $("#matchName").text(data.name);

@@ -13,9 +13,11 @@ var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle dara parsing 
 // ===========================================
-app.use(express.static(__dirname + "/../public"));
+// app.use(express.static(__dirname + "/../public"));
+app.use(express.static("app/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 // Routes 
 // ============================================
@@ -25,5 +27,5 @@ require('./app/routing/htmlRoutes')(app);
 // Start the server to begin listening 
 // ============================================
 app.listen(PORT, function() {
-    console.log('App is listening on PORT: ' + PORT);
+    console.log('App is listening on PORT: http://localhost:' + PORT);
 }); 

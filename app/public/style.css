@@ -1,0 +1,9 @@
+.jumbotron {
+    background-color: transparent;
+  }
+  
+body {
+      background: url("./images/friends.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+  

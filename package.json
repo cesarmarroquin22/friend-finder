@@ -4,7 +4,7 @@
   "description": "Friend Finder - Node and Express Servers",
   "main": "server.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
     "node": "^11.10.0",
